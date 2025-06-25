@@ -15,7 +15,6 @@
             font-family: 'Roboto', Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
         }
         .container {
@@ -58,13 +57,78 @@
             transform: translateY(-2px) scale(1.04);
             box-shadow: 0 8px 24px 0 rgba(33, 150, 243, 0.35);
         }
+        .section {
+            background: rgba(20, 30, 48, 0.85);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 48px 32px;
+            max-width: 800px;
+            margin: 40px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+            font-size: 2rem;
+            color: #4fc3f7;
+            margin-bottom: 32px;
+            text-shadow: 0 2px 16px #1976d2;
+        }
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 12px;
+            padding: 40px 20px;
+            border: 2px dashed #4fc3f7;
+            color: #b0bec5;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .screenshot-placeholder:hover {
+            border-color: #00bcd4;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(79, 195, 247, 0.3);
+        }
+        .faq-item {
+            background: rgba(30, 60, 114, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            text-align: left;
+            border-left: 4px solid #4fc3f7;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            background: rgba(30, 60, 114, 0.5);
+            transform: translateX(8px);
+        }
+        .faq-question {
+            font-weight: 700;
+            color: #4fc3f7;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .faq-answer {
+            color: #b0bec5;
+            line-height: 1.6;
+        }
         @media (max-width: 600px) {
-            .container {
-                padding: 32px 10px;
+            .container, .section {
+                padding: 32px 20px;
                 max-width: 95vw;
             }
             .logo {
                 font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .screenshots-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -74,6 +138,44 @@
         <div class="logo">hakoro</div>
         <div class="subtitle">An OG Roblox 2016 revival. Relive the classic life as a 2016 Roblox player.<br>Experience nostalgia, community, and fun—just like the old days.</div>
         <button class="get-started-btn" onclick="window.location.href='https://hakoro.net'">Get Started</button>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Screenshots</div>
+        <div class="screenshots-grid">
+            <div class="screenshot-placeholder">
+                <strong>Add Screenshot 1</strong><br>
+                Upload your first hakoro screenshot here
+            </div>
+            <div class="screenshot-placeholder">
+                <strong>Add Screenshot 2</strong><br>
+                Upload your second hakoro screenshot here
+            </div>
+            <div class="screenshot-placeholder">
+                <strong>Add Screenshot 3</strong><br>
+                Upload your third hakoro screenshot here
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Frequently Asked Questions</div>
+        <div class="faq-item">
+            <div class="faq-question">What is hakoro?</div>
+            <div class="faq-answer">hakoro is an OG Roblox 2016 revival platform where you can relive the classic Roblox experience from 2016, including the old interface, games, and community feel.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How do I get started?</div>
+            <div class="faq-answer">Simply click the "Get Started" button above to visit hakoro.net and begin your nostalgic journey back to 2016 Roblox!</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is hakoro free to play?</div>
+            <div class="faq-answer">Yes! hakoro is completely free to play and experience the classic 2016 Roblox nostalgia.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What makes hakoro special?</div>
+            <div class="faq-answer">hakoro recreates the authentic 2016 Roblox experience with the old interface, classic games, and the nostalgic community atmosphere that made Roblox special back then.</div>
+        </div>
     </div>
 </body>
 </html>
