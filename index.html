@@ -3,9 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakoro Site</title>
+    <title>hakoro Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: #e0e6ed;
+            font-family: 'Roboto', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(20, 30, 48, 0.85);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 48px 32px;
+            max-width: 420px;
+            text-align: center;
+            margin-top: 8vh;
+        }
+        .logo {
+            font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            color: #4fc3f7;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 16px #1976d2, 0 1px 0 #000;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #b0bec5;
+            margin-bottom: 28px;
+        }
+        .get-started-btn {
+            background: linear-gradient(90deg, #1976d2 0%, #00bcd4 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 16px 36px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px 0 rgba(33, 150, 243, 0.25);
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .get-started-btn:hover {
+            background: linear-gradient(90deg, #00bcd4 0%, #1976d2 100%);
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 24px 0 rgba(33, 150, 243, 0.35);
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 32px 10px;
+                max-width: 95vw;
+            }
+            .logo {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>yo yo yo wsg</h1>
+    <div class="container">
+        <div class="logo">hakoro</div>
+        <div class="subtitle">An OG Roblox 2016 revival. Relive the classic life as a 2016 Roblox player.<br>Experience nostalgia, community, and fun—just like the old days.</div>
+        <button class="get-started-btn" onclick="window.location.href='https://hakoro.net'">Get Started</button>
+    </div>
 </body>
 </html>
