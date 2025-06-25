@@ -388,7 +388,7 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
             z-index: 10000;
@@ -469,7 +469,7 @@
         }
 
         .popup-hidden {
-            display: none;
+            display: none !important;
         }
     </style>
 </head>
@@ -634,21 +634,31 @@
     </footer>
 
     <script>
+        // Define closePopup function globally
+        function closePopup() {
+            console.log('Closing popup...');
+            document.getElementById('devPopup').style.display = 'none';
+        }
+
+        // Hide popup initially
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, hiding popup...');
+            document.getElementById('devPopup').style.display = 'none';
+        });
+
         // Show popup when page loads
         window.addEventListener('load', function() {
+            console.log('Page loaded, showing popup in 500ms...');
             setTimeout(function() {
+                console.log('Showing popup now...');
                 document.getElementById('devPopup').style.display = 'flex';
             }, 500); // Show after 500ms for better UX
         });
 
-        // Close popup function
-        function closePopup() {
-            document.getElementById('devPopup').classList.add('popup-hidden');
-        }
-
         // Close popup when clicking outside
         document.getElementById('devPopup').addEventListener('click', function(e) {
             if (e.target === this) {
+                console.log('Clicked outside popup, closing...');
                 closePopup();
             }
         });
@@ -656,6 +666,7 @@
         // Close popup with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
+                console.log('Escape key pressed, closing popup...');
                 closePopup();
             }
         });
