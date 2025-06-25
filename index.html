@@ -3,179 +3,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hakoro Site</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>hakoro - OG Roblox 2016 Revival</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            color: #e0e6ed;
-            font-family: 'Roboto', Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
         }
-        .container {
-            background: rgba(20, 30, 48, 0.85);
-            border-radius: 18px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            padding: 48px 32px;
-            max-width: 420px;
-            text-align: center;
-            margin-top: 8vh;
-        }
+
         .logo {
-            font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
-            font-size: 2.8rem;
-            letter-spacing: 2px;
-            color: #4fc3f7;
-            margin-bottom: 12px;
-            text-shadow: 0 2px 16px #1976d2, 0 1px 0 #000;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .subtitle {
-            font-size: 1.1rem;
-            color: #b0bec5;
-            margin-bottom: 28px;
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
-        .get-started-btn {
-            background: linear-gradient(90deg, #1976d2 0%, #00bcd4 100%);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 16px 36px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 0 4px 16px 0 rgba(33, 150, 243, 0.25);
-            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
-        .get-started-btn:hover {
-            background: linear-gradient(90deg, #00bcd4 0%, #1976d2 100%);
-            transform: translateY(-2px) scale(1.04);
-            box-shadow: 0 8px 24px 0 rgba(33, 150, 243, 0.35);
+
+        .nav-links a:hover {
+            color: #667eea;
         }
-        .section {
-            background: rgba(20, 30, 48, 0.85);
-            border-radius: 18px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            padding: 48px 32px;
-            max-width: 800px;
-            margin: 40px 20px;
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%231a1a2e" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .section-title {
-            font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
-            font-size: 2rem;
-            color: #4fc3f7;
-            margin-bottom: 32px;
-            text-shadow: 0 2px 16px #1976d2;
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-            margin-top: 32px;
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #a0a0a0;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .screenshot-placeholder {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            border-radius: 12px;
-            padding: 40px 20px;
-            border: 2px dashed #4fc3f7;
-            color: #b0bec5;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        .screenshot-placeholder:hover {
-            border-color: #00bcd4;
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(79, 195, 247, 0.3);
-        }
-        .faq-item {
-            background: rgba(30, 60, 114, 0.3);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 20px;
-            text-align: left;
-            border-left: 4px solid #4fc3f7;
-            transition: all 0.3s ease;
-        }
-        .faq-item:hover {
-            background: rgba(30, 60, 114, 0.5);
-            transform: translateX(8px);
-        }
-        .faq-question {
-            font-weight: 700;
-            color: #4fc3f7;
-            margin-bottom: 12px;
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
-        .faq-answer {
-            color: #b0bec5;
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: #0f0f0f;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid #2a2a2a;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #a0a0a0;
             line-height: 1.6;
         }
-        @media (max-width: 600px) {
-            .container, .section {
-                padding: 32px 20px;
-                max-width: 95vw;
+
+        /* Screenshots Section */
+        .screenshots {
+            padding: 6rem 0;
+            background: #0a0a0a;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .screenshot-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+            transition: all 0.3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+        }
+
+        .screenshot-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .screenshot-info {
+            padding: 1.5rem;
+        }
+
+        .screenshot-info h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .screenshot-info p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 0;
+            background: #0f0f0f;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            border: 1px solid #2a2a2a;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #667eea;
+            transform: translateX(10px);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .footer p {
+            color: #a0a0a0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            .logo {
-                font-size: 2rem;
+
+            .hero p {
+                font-size: 1rem;
             }
-            .section-title {
-                font-size: 1.5rem;
+
+            .nav-links {
+                display: none;
             }
+
+            .features-grid,
             .screenshots-grid {
                 grid-template-columns: 1fr;
             }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content,
+        .feature-card,
+        .screenshot-card,
+        .faq-item {
+            animation: fadeInUp 0.6s ease-out;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">hakoro</div>
-        <div class="subtitle">An OG Roblox 2016 revival. Relive the classic life as a 2016 Roblox player.<br>Experience nostalgia, community, and fun—just like the old days.</div>
-        <button class="get-started-btn" onclick="window.location.href='https://hakoro.net'">Get Started</button>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">hakoro</div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#screenshots">Screenshots</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="section">
-        <div class="section-title">Screenshots</div>
-        <div class="screenshots-grid">
-            <div class="screenshot-placeholder">
-                <strong>Add Screenshot 1</strong><br>
-                Upload your first hakoro screenshot here
-            </div>
-            <div class="screenshot-placeholder">
-                <strong>Add Screenshot 2</strong><br>
-                Upload your second hakoro screenshot here
-            </div>
-            <div class="screenshot-placeholder">
-                <strong>Add Screenshot 3</strong><br>
-                Upload your third hakoro screenshot here
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Relive 2016 Roblox</h1>
+                <p>Experience the authentic OG Roblox 2016 revival. Step back in time to when Roblox was at its peak - classic games, nostalgic interface, and the community that made it special.</p>
+                <a href="https://hakoro.net" class="cta-button">Get Started Now</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="section">
-        <div class="section-title">Frequently Asked Questions</div>
-        <div class="faq-item">
-            <div class="faq-question">What is hakoro?</div>
-            <div class="faq-answer">hakoro is an OG Roblox 2016 revival platform where you can relive the classic Roblox experience from 2016, including the old interface, games, and community feel.</div>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose hakoro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Authentic 2016 Experience</h3>
+                    <p>Relive the exact Roblox interface and gameplay from 2016, complete with classic games and nostalgic elements.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>OG Community</h3>
+                    <p>Connect with fellow 2016 Roblox veterans and experience the community atmosphere that made the platform special.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimized performance ensures smooth gameplay and quick loading times, just like the original 2016 experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🆓</div>
+                    <h3>Completely Free</h3>
+                    <p>No hidden costs or premium features - everything is free to play and enjoy, just like the good old days.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Safe & Secure</h3>
+                    <p>Your account and data are protected with the latest security measures while maintaining the classic experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Cross-Platform</h3>
+                    <p>Play on any device - PC, Mac, or mobile. The 2016 experience is available wherever you are.</p>
+                </div>
+            </div>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">How do I get started?</div>
-            <div class="faq-answer">Simply click the "Get Started" button above to visit hakoro.net and begin your nostalgic journey back to 2016 Roblox!</div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots" id="screenshots">
+        <div class="container">
+            <h2 class="section-title">Screenshots</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">
+                        Add Screenshot 1
+                    </div>
+                    <div class="screenshot-info">
+                        <h3>Classic Interface</h3>
+                        <p>The authentic 2016 Roblox interface</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">
+                        Add Screenshot 2
+                    </div>
+                    <div class="screenshot-info">
+                        <h3>Nostalgic Games</h3>
+                        <p>Relive your favorite classic games</p>
+                    </div>
+                </div>
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">
+                        Add Screenshot 3
+                    </div>
+                    <div class="screenshot-info">
+                        <h3>Community Hub</h3>
+                        <p>Connect with fellow OG players</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">Is hakoro free to play?</div>
-            <div class="faq-answer">Yes! hakoro is completely free to play and experience the classic 2016 Roblox nostalgia.</div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What exactly is hakoro?</div>
+                    <div class="faq-answer">hakoro is a meticulously crafted revival of the 2016 Roblox experience. We've recreated the interface, games, and community feel from that golden era, allowing you to relive the nostalgia of classic Roblox.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I start playing on hakoro?</div>
+                    <div class="faq-answer">Simply click the "Get Started Now" button above to visit hakoro.net. From there, you can create your account and immediately begin experiencing the authentic 2016 Roblox revival.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is hakoro completely free to play?</div>
+                    <div class="faq-answer">Yes! hakoro is 100% free to play. There are no hidden costs, premium features, or paywalls. Everything is available to all players, just like the original 2016 Roblox experience.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What makes hakoro different from current Roblox?</div>
+                    <div class="faq-answer">hakoro recreates the specific 2016 Roblox experience with the old interface, classic games, and nostalgic community atmosphere. It's like stepping back in time to when Roblox was at its peak popularity and charm.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I play hakoro on mobile devices?</div>
+                    <div class="faq-answer">Absolutely! hakoro is fully optimized for cross-platform play. You can enjoy the 2016 Roblox experience on PC, Mac, or mobile devices with the same authentic feel.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is my account safe on hakoro?</div>
+                    <div class="faq-answer">Your security is our top priority. We use the latest security measures to protect your account and data while maintaining the classic 2016 experience you love.</div>
+                </div>
+            </div>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">What makes hakoro special?</div>
-            <div class="faq-answer">hakoro recreates the authentic 2016 Roblox experience with the old interface, classic games, and the nostalgic community atmosphere that made Roblox special back then.</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 hakoro. Relive the OG Roblox 2016 experience.</p>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
